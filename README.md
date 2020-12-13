@@ -68,7 +68,7 @@ The following assumptions are being made for the application:
   The required parameters and returns are described in the Swagger UI page.
 
   Swagger UI path (assuming you are running the application in local environment):<br/>
-  http://localhost:8080/swagger-ui.html#/account-controller
+  http://localhost:8080/swagger-ui.html#/restaurant-controller
 
   Sample call:
 
