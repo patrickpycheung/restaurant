@@ -1,0 +1,202 @@
+[
+  {
+    "reservation_id": "5fb66b846d7e1ba76c29a329",
+    "party_size": 6,
+    "scheduled_date": "2020-11-26",
+    "total_spend": 97.84,
+    "guest": {
+      "id": "1004",
+      "name": "Felix Fish"
+    }
+  },
+  {
+    "reservation_id": "5fb66b847da0da570d45da41",
+    "party_size": 5,
+    "scheduled_date": "2020-11-20",
+    "total_spend": 83.87,
+    "guest": {
+      "id": "1003",
+      "name": "Harry Houdini"
+    }
+  },
+  {
+    "reservation_id": "5fb66b84f20e3068d846a6f1",
+    "party_size": 5,
+    "scheduled_date": "2020-11-19",
+    "total_spend": 91.49,
+    "guest": {
+      "id": "1003",
+      "name": "Harry Houdini"
+    }
+  },
+  {
+    "reservation_id": "5fb66b847113651a1eb742e3",
+    "party_size": 3,
+    "scheduled_date": "2020-11-06",
+    "total_spend": 62.5,
+    "guest": {
+      "id": "1003",
+      "name": "Harry Houdini"
+    }
+  },
+  {
+    "reservation_id": "5fb66b84be0fecb2630c562c",
+    "party_size": 1,
+    "scheduled_date": "2020-11-24",
+    "total_spend": 74.96,
+    "guest": {
+      "id": "1003",
+      "name": "Harry Houdini"
+    }
+  },
+  {
+    "reservation_id": "5fb66b84cbd79bc539dae714",
+    "party_size": 5,
+    "scheduled_date": "2020-11-26",
+    "total_spend": 52.35,
+    "guest": {
+      "id": "1003",
+      "name": "Harry Houdini"
+    }
+  },
+  {
+    "reservation_id": "5fb66b84d279314d6d24e63b",
+    "party_size": 5,
+    "scheduled_date": "2020-11-11",
+    "total_spend": 59.52,
+    "guest": {
+      "id": "1001",
+      "name": "Jack Rabbit"
+    }
+  },
+  {
+    "reservation_id": "5fb66b842baab1721e2f12b1",
+    "party_size": 3,
+    "scheduled_date": "2020-11-01",
+    "total_spend": 80.14,
+    "guest": {
+      "id": "1002",
+      "name": "Rock Lobster"
+    }
+  },
+  {
+    "reservation_id": "5fb66b8463f4049b352f3e2d",
+    "party_size": 4,
+    "scheduled_date": "2020-11-23",
+    "total_spend": 55.1,
+    "guest": {
+      "id": "1001",
+      "name": "Jack Rabbit"
+    }
+  },
+  {
+    "reservation_id": "5fb66b84ff512c947f74a90b",
+    "party_size": 5,
+    "scheduled_date": "2020-11-08",
+    "total_spend": 82.56,
+    "guest": {
+      "id": "1002",
+      "name": "Rock Lobster"
+    }
+  },
+  {
+    "reservation_id": "5fb66b84875d793ac4024a52",
+    "party_size": 5,
+    "scheduled_date": "2020-11-28",
+    "total_spend": 98.62,
+    "guest": {
+      "id": "1004",
+      "name": "Felix Fish"
+    }
+  },
+  {
+    "reservation_id": "5fb66b8452ec146884eec11f",
+    "party_size": 3,
+    "scheduled_date": "2020-11-02",
+    "total_spend": 47.62,
+    "guest": {
+      "id": "1003",
+      "name": "Harry Houdini"
+    }
+  },
+  {
+    "reservation_id": "5fb66b84abc0b1bba9dcd8b2",
+    "party_size": 5,
+    "scheduled_date": "2020-11-18",
+    "total_spend": 87.22,
+    "guest": {
+      "id": "1002",
+      "name": "Rock Lobster"
+    }
+  },
+  {
+    "reservation_id": "5fb66b849a7fc4f6ad4a71f3",
+    "party_size": 4,
+    "scheduled_date": "2020-11-29",
+    "total_spend": 64.55,
+    "guest": {
+      "id": "1002",
+      "name": "Rock Lobster"
+    }
+  },
+  {
+    "reservation_id": "5fb66b84e00e3483f1dbf496",
+    "party_size": 4,
+    "scheduled_date": "2020-11-02",
+    "total_spend": 45.49,
+    "guest": {
+      "id": "1001",
+      "name": "Jack Rabbit"
+    }
+  },
+  {
+    "reservation_id": "5fb66b848f6db6dc6fe11f66",
+    "party_size": 6,
+    "scheduled_date": "2020-11-10",
+    "total_spend": 71.83,
+    "guest": {
+      "id": "1003",
+      "name": "Harry Houdini"
+    }
+  },
+  {
+    "reservation_id": "5fb66b84f0e6068361d84c19",
+    "party_size": 4,
+    "scheduled_date": "2020-11-23",
+    "total_spend": 54.66,
+    "guest": {
+      "id": "1004",
+      "name": "Felix Fish"
+    }
+  },
+  {
+    "reservation_id": "5fb66b847d1c0a24cc10488a",
+    "party_size": 2,
+    "scheduled_date": "2020-11-17",
+    "total_spend": 54.32,
+    "guest": {
+      "id": "1001",
+      "name": "Jack Rabbit"
+    }
+  },
+  {
+    "reservation_id": "5fb66b8430494486a78705b8",
+    "party_size": 5,
+    "scheduled_date": "2020-11-14",
+    "total_spend": 86.29,
+    "guest": {
+      "id": "1002",
+      "name": "Rock Lobster"
+    }
+  },
+  {
+    "reservation_id": "5fb66b843de786a45b4f6650",
+    "party_size": 5,
+    "scheduled_date": "2020-11-01",
+    "total_spend": 70.34,
+    "guest": {
+      "id": "1004",
+      "name": "Felix Fish"
+    }
+  }
+]

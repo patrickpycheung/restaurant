@@ -1,0 +1,32 @@
+[
+  {
+    "reservation_id": "5fb66b846d7e1ba76c29a329",
+    "party_size": 6,
+    "scheduled_date": "2020-11-26",
+    "total_spend": 97.84,
+    "guest": {
+      "id": "1004",
+      "name": "Felix Fish"
+    }
+  },
+  {
+    "reservation_id": "5fb66b847da0da570d45da41",
+    "party_size": 5,
+    "scheduled_date": "2020-11-20",
+    "total_spend": 83.87,
+    "guest": {
+      "id": "1003",
+      "name": "Harry Houdini"
+    }
+  },
+  {
+    "reservation_id": "5fb66b847113651a1eb742e3",
+    "party_size": 3,
+    "scheduled_date": "2020-11-06",
+    "total_spend": 62.5,
+    "guest": {
+      "id": "1003",
+      "name": "Harry Houdini"
+    }
+  }
+]
