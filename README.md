@@ -28,7 +28,7 @@
 
   | Version| Date | Description | 
   | --- | --- | --- | 
-  | 1.0.1 | 6 Dec 2020 | Initial release |
+  | 1.0.0 | 6 Dec 2020 | Initial release |
 
 ## **Assumptions**
 
