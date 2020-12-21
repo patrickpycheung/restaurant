@@ -19,7 +19,12 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.opentable.sampleapplication.constant.RestaurantConstant;
+import com.opentable.sampleapplication.constant.RestaurantConstant.CustomerReservationBasicReportField;
+import com.opentable.sampleapplication.model.CustomerReservationAdvancedReport;
+import com.opentable.sampleapplication.model.CustomerReservationBasicReport;
 import com.opentable.sampleapplication.model.CustomerReservationReport;
+import com.opentable.sampleapplication.model.CustomerReservationVipAdvancedReport;
 import com.opentable.sampleapplication.model.Reservation;
 
 /**
@@ -134,10 +139,48 @@ public class RestaurantService {
 	 * @throws JsonMappingException
 	 * @throws IOException
 	 */
-	public List<CustomerReservationReport> getCustomerReservationReport(String startDateStr, String endDateStr)
-			throws JsonParseException, JsonMappingException, IOException {
+	public List<CustomerReservationReport> getCustomerReservationReport(String reportName, String startDateStr,
+			String endDateStr) throws JsonParseException, JsonMappingException, IOException {
 		// The list of reservations with matching scheduledDate
 		List<Reservation> rawList = getReservationsByScheduledDate(startDateStr, endDateStr);
+
+		// A map storing unique customers as the key, with the value as another map (detailsMap) holding their
+		// reservation statistics
+		Map<String, Map<String, Object>> custStatisticsMap = getCustomerStatistics(rawList);
+
+		// The final list
+		List<CustomerReservationReport> reportList = new ArrayList<>();
+
+		// CustomerReservationBasicReport
+		if (reportName.toLowerCase().equals(RestaurantConstant.CUSTOMER_RESERVATION_BASIC_REPORT.toLowerCase())) {
+			configureCustomerReservationBasicReport(reportList, custStatisticsMap);
+		}
+
+		// CustomerReservationAdvancedReport
+		if (reportName.toLowerCase().equals(RestaurantConstant.CUSTOMER_RESERVATION_ADVANCED_REPORT.toLowerCase())) {
+			configureCustomerReservationAdvancedReport(reportList, custStatisticsMap);
+		}
+
+		// CustomerReservationVIPAdvancedReport
+		if (reportName.toLowerCase()
+				.equals(RestaurantConstant.CUSTOMER_RESERVATION_VIP_ADVANCED_REPORT.toLowerCase())) {
+			configureCustomerReservationVipAdvancedReport(reportList, custStatisticsMap);
+		}
+
+		// Sort the list in ascending order
+		Collections.sort(reportList);
+
+		return reportList;
+	}
+
+	/**
+	 * Generate a map storing customer reservation statistics.
+	 * 
+	 * @param rawList
+	 * @return A map storing unique customers as the key, with the value as another map (detailsMap) holding their
+	 *         reservation statistics
+	 */
+	private Map<String, Map<String, Object>> getCustomerStatistics(List<Reservation> rawList) {
 
 		// A map storing unique customers as the key, with the value as another map (detailsMap) holding their
 		// reservation statistics
@@ -151,37 +194,130 @@ public class RestaurantService {
 
 				Map<String, Object> detailsMap = custStatisticsMap.get(reservation.getGuest().getName());
 				// Update number of visit
-				detailsMap.put("num_of_visit", (Integer) detailsMap.get("num_of_visit") + 1);
+				detailsMap.put(CustomerReservationBasicReportField.NUM_OF_VISIT.getField(),
+						(Integer) detailsMap.get(CustomerReservationBasicReportField.NUM_OF_VISIT.getField()) + 1);
 				// Update total spend
 				detailsMap.put("total_spend",
-						((BigDecimal) detailsMap.get("total_spend")).add(reservation.getTotal_spend()));
+						((BigDecimal) detailsMap.get(CustomerReservationBasicReportField.TOTAL_SPEND.getField()))
+								.add(reservation.getTotal_spend()));
 			} else {
 				// Not yet have this customer entry
 
 				Map<String, Object> detailsMap = new HashMap<>();
 				// Update number of visit for the first time
-				detailsMap.put("num_of_visit", 1);
+				detailsMap.put(CustomerReservationBasicReportField.NUM_OF_VISIT.getField(), 1);
 				// Update total spend for the first time
-				detailsMap.put("total_spend", reservation.getTotal_spend());
+				detailsMap.put(CustomerReservationBasicReportField.TOTAL_SPEND.getField(),
+						reservation.getTotal_spend());
 
 				custStatisticsMap.put(reservation.getGuest().getName(), detailsMap);
 			}
 		}
 
-		// Create the final list
-		List<CustomerReservationReport> customerReservationReportList = new ArrayList<>();
+		return custStatisticsMap;
+	}
+
+	/**
+	 * Configure the report for CustomerReservationBasicReport type.
+	 * 
+	 * @param reportList
+	 * @param custStatisticsMap
+	 */
+	private void configureCustomerReservationBasicReport(List<CustomerReservationReport> reportList,
+			Map<String, Map<String, Object>> custStatisticsMap) {
 
 		for (Entry<String, Map<String, Object>> entry : custStatisticsMap.entrySet()) {
-			CustomerReservationReport customerReservationReport = new CustomerReservationReport();
-			customerReservationReport.setName(entry.getKey());
-			customerReservationReport.setNum_of_visit((Integer) entry.getValue().get("num_of_visit"));
-			customerReservationReport.setTotal_spend((BigDecimal) entry.getValue().get("total_spend"));
-			customerReservationReportList.add(customerReservationReport);
+
+			CustomerReservationBasicReport report = new CustomerReservationBasicReport();
+
+			// Basic fields
+			addCustomerReservationBasicReportFields(report, entry);
+
+			reportList.add(report);
 		}
+	}
 
-		// Sort the list in ascending order
-		Collections.sort(customerReservationReportList);
+	/**
+	 * Configure the report for configureCustomerReservationAdvancedReport type.
+	 * 
+	 * @param reportList
+	 * @param custStatisticsMap
+	 */
+	private void configureCustomerReservationAdvancedReport(List<CustomerReservationReport> reportList,
+			Map<String, Map<String, Object>> custStatisticsMap) {
 
-		return customerReservationReportList;
+		for (Entry<String, Map<String, Object>> entry : custStatisticsMap.entrySet()) {
+			CustomerReservationAdvancedReport report = new CustomerReservationAdvancedReport();
+
+			// Basic fields
+			addCustomerReservationBasicReportFields(report, entry);
+
+			// CustomerReservationAdvancedReport fields
+			addCustomerReservationAdvancedReportFields(report, entry);
+
+			reportList.add(report);
+		}
+	}
+
+	/**
+	 * Configure the report for configureCustomerReservationVipAdvancedReport type.
+	 * 
+	 * @param reportList
+	 * @param custStatisticsMap
+	 */
+	private void configureCustomerReservationVipAdvancedReport(List<CustomerReservationReport> reportList,
+			Map<String, Map<String, Object>> custStatisticsMap) {
+
+		for (Entry<String, Map<String, Object>> entry : custStatisticsMap.entrySet()) {
+			CustomerReservationVipAdvancedReport report = new CustomerReservationVipAdvancedReport();
+
+			// Basic fields
+			addCustomerReservationBasicReportFields(report, entry);
+
+			// CustomerReservationAdvancedReport fields
+			addCustomerReservationAdvancedReportFields(report, entry);
+
+			// CustomerReservationVipAdvancedReport fields
+			addCustomerReservationVipAdvancedReportFields(report, entry);
+
+			reportList.add(report);
+		}
+	}
+
+	/**
+	 * Add CustomerReservationBasicReport fields to the report.
+	 * 
+	 * @param report
+	 * @param entry
+	 */
+	private void addCustomerReservationBasicReportFields(CustomerReservationReport report,
+			Entry<String, Map<String, Object>> entry) {
+		report.setName(entry.getKey());
+		report.setNum_of_visit(
+				(Integer) entry.getValue().get(CustomerReservationBasicReportField.NUM_OF_VISIT.getField()));
+		report.setTotal_spend(
+				(BigDecimal) (entry.getValue().get(CustomerReservationBasicReportField.TOTAL_SPEND.getField())));
+	}
+
+	/**
+	 * Add CustomerReservationAdvancedReport fields to the report.
+	 * 
+	 * @param report
+	 * @param entry
+	 */
+	private void addCustomerReservationAdvancedReportFields(CustomerReservationAdvancedReport report,
+			Entry<String, Map<String, Object>> entry) {
+		report.setMax_party_size(100);
+	}
+
+	/**
+	 * Add CustomerReservationVipAdvancedReport fields to the report.
+	 * 
+	 * @param report
+	 * @param entry
+	 */
+	private void addCustomerReservationVipAdvancedReportFields(CustomerReservationVipAdvancedReport report,
+			Entry<String, Map<String, Object>> entry) {
+		report.setVip_credit(200);
 	}
 }

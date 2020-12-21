@@ -1,0 +1,23 @@
+﻿reportName,startDateStr,endDateStr,reportsStr
+CustomerReservationBasicReport,2020-11-27,2020-11-28,|
+CustomerReservationBasicReport,2020-11-26,2020-11-28,Felix Fish~1~97.84
+CustomerReservationBasicReport,2020-11-25,2020-11-28,Felix Fish~1~97.84
+CustomerReservationBasicReport,2020-11-25,2020-11-26,Felix Fish~1~97.84
+CustomerReservationBasicReport,2020-11-21,2020-11-25,|
+CustomerReservationBasicReport,2020-11-20,2020-11-26,Felix Fish~1~97.84|Harry Houdini~1~83.87
+CustomerReservationBasicReport,2020-11-19,2020-11-21,Harry Houdini~1~83.87
+CustomerReservationBasicReport,2020-11-19,2020-11-20,Harry Houdini~1~83.87
+CustomerReservationBasicReport,2020-11-18,2020-11-19,|
+CustomerReservationBasicReport,2020-11-19,null,Felix Fish~1~97.84|Harry Houdini~1~83.87
+CustomerReservationBasicReport,2020-11-20,null,Felix Fish~1~97.84|Harry Houdini~1~83.87
+CustomerReservationBasicReport,2020-11-21,null,Felix Fish~1~97.84
+CustomerReservationBasicReport,2020-11-25,null,Felix Fish~1~97.84
+CustomerReservationBasicReport,2020-11-26,null,Felix Fish~1~97.84
+CustomerReservationBasicReport,2020-11-27,null,|
+CustomerReservationBasicReport,null,2020-11-05,|
+CustomerReservationBasicReport,null,2020-11-06,Harry Houdini~1~62.5
+CustomerReservationBasicReport,null,2020-11-07,Harry Houdini~1~62.5
+CustomerReservationBasicReport,null,2020-11-25,Harry Houdini~2~146.37
+CustomerReservationBasicReport,null,2020-11-26,Felix Fish~1~97.84|Harry Houdini~2~146.37
+CustomerReservationBasicReport,null,2020-11-27,Felix Fish~1~97.84|Harry Houdini~2~146.37
+CustomerReservationBasicReport,null,null,Felix Fish~1~97.84|Harry Houdini~2~146.37

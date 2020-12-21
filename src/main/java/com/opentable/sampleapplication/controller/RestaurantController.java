@@ -3,6 +3,7 @@ package com.opentable.sampleapplication.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,10 +54,11 @@ public class RestaurantController {
 	 *         respective total spending within a time period
 	 */
 	public ResponseEntity<Object> getCustomerReservationReport(
+			@RequestParam(required = true) @NotEmpty(message = "Report name is required") String reportName,
 			@RequestParam(required = false) @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$", message = "Start date must have the pattern 'YYYY-MM-DD'") String startDate,
 			@RequestParam(required = false) @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$", message = "End date must have the pattern 'YYYY-MM-DD'") String endDate) {
 		try {
-			return ResponseEntity.ok(restaurantService.getCustomerReservationReport(startDate, endDate));
+			return ResponseEntity.ok(restaurantService.getCustomerReservationReport(reportName, startDate, endDate));
 		} catch (Exception e) {
 			return getErrorResponse(e);
 		}

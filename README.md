@@ -29,6 +29,7 @@
   | Version| Date | Description | 
   | --- | --- | --- | 
   | 1.0.0 | 6 Dec 2020 | Initial release |
+  | 1.0.1 | 21 Dec 2020 | Add support for different report types |
 
 ## **Assumptions**
 
@@ -55,7 +56,7 @@ The following assumptions are being made for the application:
 
   A JAR file will be created in the "target" folder and can be executed by the following command
 
-    java -jar account-<artifact version>.jar
+    java -jar opentable-restaurant-<artifact version>.jar
 
   ### **RESTful API endpoints**
 

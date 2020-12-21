@@ -11,7 +11,7 @@ import lombok.Data;
  *
  */
 @Data
-public class CustomerReservationReport implements Comparable<CustomerReservationReport> {
+public abstract class CustomerReservationReport implements Comparable<CustomerReservationReport> {
 
 	private String name;
 	private int num_of_visit;

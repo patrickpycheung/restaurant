@@ -1,0 +1,23 @@
+﻿startDateStr,endDateStr,reportsStr
+2020-11-27,2020-11-28,|
+2020-11-26,2020-11-28,Felix Fish~1~97.84~100
+2020-11-25,2020-11-28,Felix Fish~1~97.84~100
+2020-11-25,2020-11-26,Felix Fish~1~97.84~100
+2020-11-21,2020-11-25,|
+2020-11-20,2020-11-26,Felix Fish~1~97.84~100|Harry Houdini~1~83.87~100
+2020-11-19,2020-11-21,Harry Houdini~1~83.87~100
+2020-11-19,2020-11-20,Harry Houdini~1~83.87~100
+2020-11-18,2020-11-19,|
+2020-11-19,null,Felix Fish~1~97.84~100|Harry Houdini~1~83.87~100
+2020-11-20,null,Felix Fish~1~97.84~100|Harry Houdini~1~83.87~100
+2020-11-21,null,Felix Fish~1~97.84~100
+2020-11-25,null,Felix Fish~1~97.84~100
+2020-11-26,null,Felix Fish~1~97.84~100
+2020-11-27,null,|
+null,2020-11-05,|
+null,2020-11-06,Harry Houdini~1~62.5~100
+null,2020-11-07,Harry Houdini~1~62.5~100
+null,2020-11-25,Harry Houdini~2~146.37~100
+null,2020-11-26,Felix Fish~1~97.84~100|Harry Houdini~2~146.37~100
+null,2020-11-27,Felix Fish~1~97.84~100|Harry Houdini~2~146.37~100
+null,null,Felix Fish~1~97.84~100|Harry Houdini~2~146.37~100
