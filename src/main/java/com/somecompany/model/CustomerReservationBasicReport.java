@@ -1,4 +1,4 @@
-package com.opentable.sampleapplication.model;
+package com.somecompany.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class CustomerReservationBasicReport extends CustomerReservationReport {
 
-	public CustomerReservationBasicReport() {
-		super();
-	}
+    public CustomerReservationBasicReport() {
+        super();
+    }
 }

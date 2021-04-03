@@ -1,4 +1,4 @@
-package com.opentable.sampleapplication.model;
+package com.somecompany.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,9 +7,9 @@ import lombok.Setter;
 @Setter
 public class CustomerReservationVipAdvancedReport extends CustomerReservationAdvancedReport {
 
-	private int vip_credit;
+    private int vip_credit;
 
-	public CustomerReservationVipAdvancedReport() {
-		super();
-	}
+    public CustomerReservationVipAdvancedReport() {
+        super();
+    }
 }

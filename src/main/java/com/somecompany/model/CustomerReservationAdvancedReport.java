@@ -1,4 +1,4 @@
-package com.opentable.sampleapplication.model;
+package com.somecompany.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,9 +7,9 @@ import lombok.Setter;
 @Setter
 public class CustomerReservationAdvancedReport extends CustomerReservationReport {
 
-	private int max_party_size;
+    private int max_party_size;
 
-	public CustomerReservationAdvancedReport() {
-		super();
-	}
+    public CustomerReservationAdvancedReport() {
+        super();
+    }
 }
