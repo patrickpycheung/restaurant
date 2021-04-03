@@ -9,7 +9,7 @@
 		<relativePath/>
 	</parent>
 	<groupId>com.opentable</groupId>
-	<artifactId>opentable-restaurant</artifactId>
+	<artifactId>restaurant</artifactId>
 	<version>1.0.1</version>
 	<name>Restaurant Application</name>
 	<description>Restaurant Application</description>
